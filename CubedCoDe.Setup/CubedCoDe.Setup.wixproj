@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.7</ProductVersion>
+    <ProjectGuid>8c1fddd0-d75f-4ec8-871e-8446cc7258f5</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>CubedCoDe</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <Name>CubedCoDe.Setup</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug</DefineConstants>
+    <LinkerAdditionalOptions>-b "..\CubedCoDe.WindowsService\bin\Debug"</LinkerAdditionalOptions>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <LinkerAdditionalOptions>-b "..\CubedCoDe.WindowsService\bin\Release"</LinkerAdditionalOptions>
+    <SuppressPdbOutput>True</SuppressPdbOutput>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="CubedCoDe.WindowsService.wxs" />
+    <Compile Include="Product.wxs" />
+    <Compile Include="WixUI_CubedInstallDir.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>$(WixExtDir)\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="XslTransform.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CubedCoDe.WindowsService\CubedCoDe.WindowsService.csproj">
+      <Name>CubedCoDe.WindowsService</Name>
+      <Project>{c4fce850-b8f9-4614-a846-201f81a558a4}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+      <ContentProject>True</ContentProject>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <Target Name="BeforeBuild">
+    <MSBuild Projects="%(ProjectReference.FullPath)" Targets="Build" Properties="Configuration=$(Configuration);Platform=AnyCPU" Condition="'%(ProjectReference.ContentProject)'=='True'" />
+    <PropertyGroup>
+      <DefineConstants>BasePath=%(ProjectReference.RootDir)%(ProjectReference.Directory)bin\$(Configuration);</DefineConstants>
+      <LinkerBaseInputPaths>%(ProjectReference.RootDir)%(ProjectReference.Directory)bin\$(Configuration)\</LinkerBaseInputPaths>
+    </PropertyGroup>
+    <HeatDirectory OutputFile="%(ProjectReference.Filename)-temp.xml" Directory="%(ProjectReference.RootDir)%(ProjectReference.Directory)bin\$(Configuration)\" DirectoryRefId="INSTALLLOCATION" ComponentGroupName="%(ProjectReference.Filename)_Project" SuppressCom="true" SuppressFragments="true" SuppressRegistry="true" SuppressRootDirectory="true" AutoGenerateGuids="false" GenerateGuidsNow="true" ToolPath="$(WixToolPath)" PreprocessorVariable="var.BasePath" Condition="'%(ProjectReference.ContentProject)'=='True'" />
+    <XslTransformation XmlInputPaths="%(ProjectReference.Filename)-temp.xml" XslInputPath="XslTransform.xslt" OutputPaths="%(ProjectReference.Filename).wxs" Condition="'%(ProjectReference.ContentProject)'=='True'" />
+  </Target>
+</Project>

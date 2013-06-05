@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Dictionary>
+  <Acronyms>
+    <CasingExceptions>
+      <Acronym>Co</Acronym>
+      <Acronym>De</Acronym>
+    </CasingExceptions>
+  </Acronyms>
+  <Words>
+    <DiscreteExceptions>
+      <Term>code</Term>
+    </DiscreteExceptions>
+    <Recognized>
+      <Word>Git</Word>
+    </Recognized>
+  </Words>
+</Dictionary>

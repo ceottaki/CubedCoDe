@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  <copyright file="Product.wxs" company="Felipe Ceotto">Copyright (c) Felipe Ceotto. All rights reserved.</copyright>
+-->
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+	<Product Id="547fa78e-282c-45fc-8be6-0437ab473edd" Name="CUBED CoDe" Language="1033" Version="0.1.0.0" Manufacturer="Felipe Ceotto" UpgradeCode="976dd12b-87c8-4c43-a734-6fad26d22f31">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" InstallPrivileges="elevated" />
+
+    <MajorUpgrade
+      AllowDowngrades="no"
+      AllowSameVersionUpgrades="no"
+      Schedule="afterInstallValidate"
+      DowngradeErrorMessage="A newer version of [ProductName] is already installed. Setup will now exit." />
+    
+    <MediaTemplate EmbedCab="yes" />
+
+    <Feature Id="ProductFeature" Title="CubedCoDeInstaller" Level="1">
+      <ComponentGroupRef Id="CubedCoDe.WindowsService_Project" />
+      <ComponentRef Id="ServiceComponent"/>
+      <ComponentRef Id="ConfigFileComponent"/>
+    </Feature>
+  
+    <Property Id="WIXUI_INSTALLDIR">INSTALLLOCATION</Property>
+
+    <Property Id="RepositoriesConfigurationFilePath">CubedCoDeConfig.xml</Property>
+    <Property Id="ProcessWaitMilliseconds">300000</Property>
+
+    <UIRef Id="WixUI_CubedInstallDir" />
+
+    <WixVariable Id="WixUILicenseRtf" Value="..\gpl.rtf" />
+  </Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLLOCATION" Name="CUBED CoDe">
+          <Component Id="ServiceComponent" Guid="8217319e-58e5-4bb4-a8b9-94a43666ac0d">
+            <CreateFolder />
+            <File Id="MainExecutable" KeyPath="yes"
+              Source="SourceDir\CubedCoDe.WindowsService.exe" />
+            <ServiceInstall Id="ServiceInstaller"
+              Type="ownProcess"
+              Vital="yes"
+              Name="CUBEDCoDeService"
+              DisplayName="CUBED CoDe Service"
+              Description="Provides continuous deployment of applications in a server by using Git repositories to check for new versions and automatically build and deploy them."
+              Start="auto"
+              Account="NT Authority\Network Service"
+              ErrorControl="ignore"
+              Interactive="no" />
+            <ServiceControl Id="StartService"
+              Start="install"
+              Stop="both"
+              Remove="uninstall"
+              Name="CUBEDCoDeService"
+              Wait="yes" />
+          </Component>
+          <Component Id="ConfigFileComponent" Guid="ab42bd2b-91a0-423e-ad01-e6fd25d6f1f1">
+            <File Id="ConfigFile" KeyPath="yes" Vital="yes"
+                  Source="SourceDir\CubedCoDe.WindowsService.exe.config" />
+            <util:XmlFile Id="RepositoriesConfigurationFilePathSettings"
+                          File="[INSTALLLOCATION]CubedCoDe.WindowsService.exe.config"
+                          Action="setValue" Name="value"
+                          ElementPath="//configuration/appSettings/add[\[]@key='RepositoriesConfigurationFilePath'[\]]"
+                          Sequence="1"
+                          Value="[RepositoriesConfigurationFilePath]" />
+            <util:XmlFile Id="ProcessWaitMillisecondsSettings"
+                          File="[INSTALLLOCATION]CubedCoDe.WindowsService.exe.config"
+                          Action="setValue" Name="value"
+                          ElementPath="//configuration/appSettings/add[\[]@key='ProcessWaitMilliseconds'[\]]"
+                          Sequence="2"
+                          Value="[ProcessWaitMilliseconds]" />
+          </Component>
+        </Directory>
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+		</ComponentGroup>
+	</Fragment>
+</Wix>

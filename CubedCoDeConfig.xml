@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ArrayOfRepositoryEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <RepositoryEntity>
+    <Name>Illustrations</Name>
+    <LocationPath>C:\DEV\Repos\Illustrations2</LocationPath>
+    <RemoteName>origin</RemoteName>
+    <CheckForUpdatesTimeSpan>PT1H</CheckForUpdatesTimeSpan>
+    <DeploymentBranchName>Live</DeploymentBranchName>
+    <SolutionFileToBuild>C:\DEV\Repos\Illustrations2\Illustrations.sln</SolutionFileToBuild>
+    <SolutionConfigurationToBuild>Release</SolutionConfigurationToBuild>
+    <LastUpdateTime>2013-05-22T15:41:38.5807903+01:00</LastUpdateTime>
+    <IsNeedingUpdate>false</IsNeedingUpdate>
+    <IsNeedingBuilding>false</IsNeedingBuilding>
+    <IsNeedingDeployment>true</IsNeedingDeployment>
+    <DeploymentActions>
+      <DeploymentActionEntity>
+        <ActionType>ExecuteFile</ActionType>
+        <ActionParameters>
+          <string>msiexec</string>
+          <string>/quiet /i C:\DEV\Repos\Illustrations2\Illustrations.WindowsServiceWixSetup\bin\Debug\en-US\IllustrationsService.msi INSTALLLOCATION="C:\Program Files\AXA Isle of Man\IllustrationsService" EILLU_DBSERVER="S28APACHEREP" LOG_DBSERVER="S28APACHEREP"</string>
+        </ActionParameters>
+        <RollbackActions />
+        <IsKeyToDeployment>true</IsKeyToDeployment>
+      </DeploymentActionEntity>
+    </DeploymentActions>
+  </RepositoryEntity>
+</ArrayOfRepositoryEntity>

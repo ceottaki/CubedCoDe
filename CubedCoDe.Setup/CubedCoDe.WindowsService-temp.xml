@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="INSTALLLOCATION">
+            <Component Id="cmp2450A19AA75F293F9B8F1300E1547843" Guid="{8E65E55E-C46F-45C3-BF7F-5D1371DC7491}">
+                <File Id="fil61E0DFA7D8B86EF2CA065CFE641DB19A" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.Core.dll" />
+            </Component>
+            <Component Id="cmpC5EC9182EBB3F835D7D72829C043303A" Guid="{7BB5C544-8D81-4705-900E-AB93071FD494}">
+                <File Id="fil48BC6A55C90200A1C7AED5402EB52855" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.Core.pdb" />
+            </Component>
+            <Component Id="cmp14122181E4224A24409DEF2C29863ACD" Guid="{DB7BA7C4-9733-494C-A9B1-5FF2AC20DFD1}">
+                <File Id="fil12A59B67039C221C107D7D99050AB208" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.Core.xml" />
+            </Component>
+            <Component Id="cmp727D255CEF85A867A343D9988EA3C3EB" Guid="{32383ABB-CB93-405C-A0A3-70F9E4A8617A}">
+                <File Id="fil2C6D3EC7335D11EA86E3B62B0C5665B2" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.DI.dll" />
+            </Component>
+            <Component Id="cmp4674A0C07A15BC56DF39F763B8A35899" Guid="{EEBF759D-8979-479A-AB73-BCFFC4146429}">
+                <File Id="filE73294B7AC06D4E5BEC6C6757BF4DCAF" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.DI.pdb" />
+            </Component>
+            <Component Id="cmp7A62526C25EE63F11EE9E883663920A7" Guid="{D8CA063A-1ADA-47FB-9E5B-48E3A327BE8F}">
+                <File Id="filB6CBAD3E7AA552997CBA1F508753ED3B" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.DI.xml" />
+            </Component>
+            <Component Id="cmp4603A2864D5EC86A1458BEB393604DCE" Guid="{6ADC10CA-E330-4264-B2FE-369AB4B298E1}">
+                <File Id="filB458FF3F6A67045BAB7FE1B14C692383" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.Entities.dll" />
+            </Component>
+            <Component Id="cmpE1C783101658AE0C927C1AC290CA2AA3" Guid="{40C543F9-ADE8-4905-B6BE-F79B4FC35EBE}">
+                <File Id="fil88F34B1D1C2C3F22FDD703BBDBF91717" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.Entities.pdb" />
+            </Component>
+            <Component Id="cmp600467122957B4731DB33154D3E80C47" Guid="{74152C46-A8A5-4B8C-B2CE-B992F021DCCE}">
+                <File Id="filB306FD85A47C2F39E6EBF0234AEB9F4F" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.Entities.xml" />
+            </Component>
+            <Component Id="cmp8F689B98565546AD1A07A6F5A0097F27" Guid="{373E37ED-C9C9-406F-926D-F7A8066F9880}">
+                <File Id="fil842509F083D4F7D31EE6485366F77D0B" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.Infrastructure.dll" />
+            </Component>
+            <Component Id="cmp0F7C38B5958FF60A88CA5311BBCEA771" Guid="{28A8767D-2E55-4780-A414-206B9B73E213}">
+                <File Id="filAC88A2A70885EE84C9B03BC892BCDE75" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.Infrastructure.pdb" />
+            </Component>
+            <Component Id="cmp31820475F9A39140445C019DBBB1D557" Guid="{DAF5AA0F-DD0E-4D44-BE93-6E9CAAA6EF99}">
+                <File Id="fil5C65FA31E3AEEF8449EBD3F28C6ADD1B" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.Infrastructure.xml" />
+            </Component>
+            <Component Id="cmp56D6A663F2F58FD0AE0494BF5859AF4A" Guid="{05C4499D-04BA-40EA-BDB4-74053CE93E78}">
+                <File Id="filDB1859D3562AE0877DAFE240BD8F8C81" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.Model.dll" />
+            </Component>
+            <Component Id="cmp7F2E4FC8D6E97BAF9F4F197C7F52DD59" Guid="{CB2AB226-298D-4662-9427-6B09C5152093}">
+                <File Id="fil924A7F62B6AC23CC47774D847D806A5D" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.Model.pdb" />
+            </Component>
+            <Component Id="cmp636DC7CF0796C15BF40A198396B66A02" Guid="{51CBCB6C-AE91-43B4-A837-44DAFBE295FF}">
+                <File Id="filCEE421D765A19899E24317ED1E78C0B0" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.Model.xml" />
+            </Component>
+            <Component Id="cmp5B1C9ABC8F482A7986DC79160E7224A1" Guid="{7E0A6FBF-272D-4878-877C-D917B84B85C4}">
+                <File Id="fil324D8E67BE5406A6211053E69C099C01" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.WindowsService.exe" />
+            </Component>
+            <Component Id="cmp88F84C7B5B75D1F58E32A070B7FA38EC" Guid="{C7ABE84F-8DC5-40DB-A1D6-986F81A85C1F}">
+                <File Id="filE04FBFA135BD99F2FABF41E8E92ACA03" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.WindowsService.exe.CodeAnalysisLog.xml" />
+            </Component>
+            <Component Id="cmp4EE1EFCE155C9444A86D40BCB4EB3EA7" Guid="{2B74D389-542A-48E1-9B98-351BE8EF5DF0}">
+                <File Id="filB427E2A60C671C0087A50E56DBDE27FC" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.WindowsService.exe.config" />
+            </Component>
+            <Component Id="cmpDB7B060BD14D3DCA0DD3F081E9938BA6" Guid="{1C1BA161-7438-41FB-A54B-FD5BFB10FF27}">
+                <File Id="fil978393D82FA3AC6A53CCE0F27E2A63A8" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.WindowsService.exe.lastcodeanalysissucceeded" />
+            </Component>
+            <Component Id="cmpB41D14E8FF1B61607FD104187D557739" Guid="{0E38AAA7-7F35-4E4A-A285-2EF3C4B1EE02}">
+                <File Id="filA89360F568B04BDAECA87679E93C2719" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.WindowsService.pdb" />
+            </Component>
+            <Component Id="cmpD5E69EDECBEC119654B9AA92CAC83D35" Guid="{04D37604-7126-4A66-8444-FCA151A7BFE2}">
+                <File Id="fil803FF49713433F1C24765EE03E071427" KeyPath="yes" Source="$(var.BasePath)\CubedCoDe.WindowsService.xml" />
+            </Component>
+            <Component Id="cmpC82F65739AE0572E5B1A0D87129F62CA" Guid="{781B9BF2-939E-42E3-BCCD-77C5D9810291}">
+                <File Id="filFE3CDF8BD7733BCC2ECC55B57CC2F394" KeyPath="yes" Source="$(var.BasePath)\LibGit2Sharp.dll" />
+            </Component>
+            <Component Id="cmp4CE3CD67B38451CF709EB01A0986A380" Guid="{678D7396-6F67-4B1A-978E-7D666E536575}">
+                <File Id="filA0CD31138CFE04154571CE8DD2F7D541" KeyPath="yes" Source="$(var.BasePath)\LibGit2Sharp.xml" />
+            </Component>
+            <Component Id="cmpFFEE957CF504CA715B9645B6FFEF52B7" Guid="{6B90BF6B-1520-45BB-8520-1542C2A72825}">
+                <File Id="fil5FC467D564A5DD622182200B8E84C416" KeyPath="yes" Source="$(var.BasePath)\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+            </Component>
+            <Component Id="cmpBEAF3523A8A3E1687594A498090A7D2D" Guid="{3DD6A755-5CD1-40E0-B6E5-3C7340E74120}">
+                <File Id="fil126C5A665E7A319FF9C4E0D0DC005197" KeyPath="yes" Source="$(var.BasePath)\Microsoft.Practices.EnterpriseLibrary.Common.xml" />
+            </Component>
+            <Component Id="cmp3476F175F41E370655A73ACF94D45EAE" Guid="{1ECB55C7-545C-45C9-AF83-3EC00C2AADC6}">
+                <File Id="fil5D01B6150C0C7FD8D938CEFC449CCF1E" KeyPath="yes" Source="$(var.BasePath)\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" />
+            </Component>
+            <Component Id="cmpD77DB6610BEB58E0FDC59ECE35886EC6" Guid="{DE800A1E-E574-4E4C-9266-AF7F6C759243}">
+                <File Id="fil793FB26FC8A007BF2FB4DC8ECD56DCA3" KeyPath="yes" Source="$(var.BasePath)\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml" />
+            </Component>
+            <Component Id="cmp5E730EBA31DB46CE2CFA58E84AEDF3D7" Guid="{C1188561-C193-4CCF-B526-EF09B6ED48EB}">
+                <File Id="fil86A426FDF10E17D2BE6C6CF355C8FB7E" KeyPath="yes" Source="$(var.BasePath)\Microsoft.Practices.EnterpriseLibrary.Logging.dll" />
+            </Component>
+            <Component Id="cmp544F264CF54912D2ECEE1B6AC0F08452" Guid="{5362881E-E539-4BFB-AFC7-4BA6C22DA392}">
+                <File Id="fil2083D00A6AB09C003534F9014F6D085C" KeyPath="yes" Source="$(var.BasePath)\Microsoft.Practices.EnterpriseLibrary.Logging.xml" />
+            </Component>
+            <Component Id="cmp09935A19E62F557F1283D8B2856AAFF4" Guid="{DA7BB675-EAE7-45ED-B502-5A057B672D68}">
+                <File Id="filB3467F5442DD3EF32A3C43894512D9CC" KeyPath="yes" Source="$(var.BasePath)\Ninject.dll" />
+            </Component>
+            <Component Id="cmp3E39614FD748A4BD22FDC106607694D0" Guid="{A6903C03-2DF1-452F-975F-D2462872EA35}">
+                <File Id="fil09834775D6C4E42578062CBEA0006AF4" KeyPath="yes" Source="$(var.BasePath)\Ninject.pdb" />
+            </Component>
+            <Component Id="cmp60D646ACE2A9F9DF42B14DE09887741E" Guid="{323686BA-8C13-4066-B75D-1029E5A53DCD}">
+                <File Id="fil8155D830C8B2F9195C82E0CD71FD522D" KeyPath="yes" Source="$(var.BasePath)\Ninject.xml" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="CubedCoDe.WindowsService_Project">
+            <ComponentRef Id="cmp2450A19AA75F293F9B8F1300E1547843" />
+            <ComponentRef Id="cmpC5EC9182EBB3F835D7D72829C043303A" />
+            <ComponentRef Id="cmp14122181E4224A24409DEF2C29863ACD" />
+            <ComponentRef Id="cmp727D255CEF85A867A343D9988EA3C3EB" />
+            <ComponentRef Id="cmp4674A0C07A15BC56DF39F763B8A35899" />
+            <ComponentRef Id="cmp7A62526C25EE63F11EE9E883663920A7" />
+            <ComponentRef Id="cmp4603A2864D5EC86A1458BEB393604DCE" />
+            <ComponentRef Id="cmpE1C783101658AE0C927C1AC290CA2AA3" />
+            <ComponentRef Id="cmp600467122957B4731DB33154D3E80C47" />
+            <ComponentRef Id="cmp8F689B98565546AD1A07A6F5A0097F27" />
+            <ComponentRef Id="cmp0F7C38B5958FF60A88CA5311BBCEA771" />
+            <ComponentRef Id="cmp31820475F9A39140445C019DBBB1D557" />
+            <ComponentRef Id="cmp56D6A663F2F58FD0AE0494BF5859AF4A" />
+            <ComponentRef Id="cmp7F2E4FC8D6E97BAF9F4F197C7F52DD59" />
+            <ComponentRef Id="cmp636DC7CF0796C15BF40A198396B66A02" />
+            <ComponentRef Id="cmp5B1C9ABC8F482A7986DC79160E7224A1" />
+            <ComponentRef Id="cmp88F84C7B5B75D1F58E32A070B7FA38EC" />
+            <ComponentRef Id="cmp4EE1EFCE155C9444A86D40BCB4EB3EA7" />
+            <ComponentRef Id="cmpDB7B060BD14D3DCA0DD3F081E9938BA6" />
+            <ComponentRef Id="cmpB41D14E8FF1B61607FD104187D557739" />
+            <ComponentRef Id="cmpD5E69EDECBEC119654B9AA92CAC83D35" />
+            <ComponentRef Id="cmpC82F65739AE0572E5B1A0D87129F62CA" />
+            <ComponentRef Id="cmp4CE3CD67B38451CF709EB01A0986A380" />
+            <ComponentRef Id="cmpFFEE957CF504CA715B9645B6FFEF52B7" />
+            <ComponentRef Id="cmpBEAF3523A8A3E1687594A498090A7D2D" />
+            <ComponentRef Id="cmp3476F175F41E370655A73ACF94D45EAE" />
+            <ComponentRef Id="cmpD77DB6610BEB58E0FDC59ECE35886EC6" />
+            <ComponentRef Id="cmp5E730EBA31DB46CE2CFA58E84AEDF3D7" />
+            <ComponentRef Id="cmp544F264CF54912D2ECEE1B6AC0F08452" />
+            <ComponentRef Id="cmp09935A19E62F557F1283D8B2856AAFF4" />
+            <ComponentRef Id="cmp3E39614FD748A4BD22FDC106607694D0" />
+            <ComponentRef Id="cmp60D646ACE2A9F9DF42B14DE09887741E" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>
