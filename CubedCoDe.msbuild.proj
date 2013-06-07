@@ -1,0 +1,8 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<Solution Include="C:\DEV\Repos\CubedCoDe\CubedCoDe.sln" />
+	</ItemGroup>
+	<Target Name="Build">
+		<MSBuild Projects="@(Solution)" Targets="Build" Properties="Configuration=Debug" />
+	</Target>
+</Project>

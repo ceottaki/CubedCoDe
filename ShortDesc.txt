@@ -1,0 +1,1 @@
+A continuous deployment solution that uses distributed version control repos to check for updates, then builds, tests and deploys them.
